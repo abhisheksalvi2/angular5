@@ -1,0 +1,55 @@
+<div class="col-lg-10 col-lg-offset-1  col-sm-12 col-md-12 col-xs-12">
+    <div class="form-group">
+        <br><br><br>
+        <a routerLink="" class="btn btn-info ">Back</a>
+    </div>
+    <div class="row">
+        <div class="form-group"></div>
+        <h3 style="text-align: center;">User albums</h3>
+        <div class="col-md-10 col-lg-10 col-sm-offset-0 col-xs-12 col-sm-12 col-sm-offset-4 table-top">
+            <div class="table-responsive"> 
+                <table class="table table-bordered">
+                    <thead class="table-head-custom">
+                        <tr>
+                            <th style="width:1%;">Sr.No</th>
+                            <th style="width:25%;">Album Title</th>
+                            <th style="width:5%;">Action</th>
+                        </tr>
+                    </thead> 
+                    <tbody>
+                        <tr *ngFor="let list of user_album_array; index as i">
+                            <td>{{i+1}}</td>  
+                            <td>{{list.title}}</td> 
+
+                            <td>
+                                <div class="btn-group btn-group-sm">
+                                    <button title="view photos" type="button" class="btn btn-primary btn-sm" data-toggle="modal"  data-target="#myModal3" ng-click="open_user_album(list.id);">
+                                        <a href="images/{{list.id}}/{{list.userId}}"><span class="glyphicon glyphicon-eye-open"></span></a> 
+                                    </button>
+                                </div>
+                            </td>  
+                        </tr>
+
+                    </tbody>
+
+                </table>
+            </div>
+            <ngb-pagination [collectionSize]="collectionsize" [(page)]="page" [maxSize]="5" [boundaryLinks]="true"></ngb-pagination>
+
+        </div>
+    </div>
+</div>
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Modal title</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>One fine body&hellip;</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
+  </div>
+</ng-template>

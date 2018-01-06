@@ -1,0 +1,41 @@
+<div class="col-lg-10 col-lg-offset-1  col-sm-12 col-md-12 col-xs-12">
+    <div class="form-group">           
+        <div class="form-group"><br><br><br></div>
+        <h3 style="text-align: center;">Users</h3>
+        <div class="col-md-10 col-lg-10 col-sm-offset-0 col-xs-12 col-sm-12 col-sm-offset-4 table-top">
+            <div class="table-responsive"> 
+                <table class="table table-bordered">
+                    <thead class="table-head-custom">
+                        <tr>
+                            <th style="width:1%;">Sr.No</th>
+                            <th style="width:25%;">Name</th>
+                            <th style="width:12%;" >User Name </th> 
+                            <th style="width:12%;" >Email</th>
+                            <th style="width:12%;" >Phone</th>    
+                            <th style="width:15%;">Website</th>
+                            <th style="width:5%;">Action</th>
+                        </tr>
+                    </thead> 
+                    <tbody>
+                        <tr *ngFor="let list of users; index as i">
+                            <td>{{i+1}}</td>  
+                            <td>{{list.name}}</td> 
+                            <td>{{list.username}}</td> 
+                            <td>{{list.email}}</td> 
+                            <td>{{list.phone}}</td> 
+                            <td>{{list.website}}</td> 
+                            <td>
+                                <div class="btn-group btn-group-sm">
+                                    <button title="view Album" type="button" class="btn btn-primary btn-sm">
+                                        <a href="albums/{{list.id}}"><span class="glyphicon glyphicon-eye-open"></span></a> 
+                                    </button>
+                                </div>
+                            </td>  
+                        </tr>
+                         
+                    </tbody>
+                </table> 
+            </div>
+        </div>
+    </div>
+</div>

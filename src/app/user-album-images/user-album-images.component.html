@@ -1,0 +1,19 @@
+<div class="form-group"><br><br></div>
+<div class="form-group">
+    <h3 style="text-align: center;">User album images</h3>
+    <a routerLink="../../../albums/{{user_id}}" class="btn btn-info ">Back</a>
+    <div *ngFor="let list of user_album_images_array; index as i">
+        <div class="col-lg-8 col-lg-offset-2 col-sm-12 col-md-12 col-xs-12">
+            <div class="well well-lg">
+                <div class="form-group">                                       
+                    <div class="col-lg-1  col-sm-12 col-md-12 col-xs-12">{{i + 1}}</div>
+                    <div class="col-lg-4  col-sm-12 col-md-12 col-xs-12">
+                        <img class="img-responsive img-form-custom" src="{{list.thumbnailUrl}}" err-src="<?php echo base_url() ?>includes/img/default.png" height="40px" width="40px">
+                    </div>                                      
+                    <div class="col-lg-4  col-sm-12 col-md-12 col-xs-12"><strong>image  title </strong>: {{list.title}}</div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
